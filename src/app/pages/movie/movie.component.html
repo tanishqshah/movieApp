@@ -1,0 +1,15 @@
+<div>
+    
+</div>
+
+<section>
+    <form action="" #reviewForm="ngForm" (ngSubmit)="onSubmit(reviewForm)">
+        <input type="email" placeholder="enter Email" emailvalidator name="email" ngModel>
+        <input type="text" placeholder="enter Message" name="review" ngModel>
+        <input type="number" placeholder="Rating" name="rating" ngModel>
+        <button class="btn btn-dark">Submit</button>
+    </form>
+    <div class="message">
+        {{message}}
+    </div>
+</section>
