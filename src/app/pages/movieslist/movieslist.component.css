@@ -39,4 +39,7 @@
 
 .movie-detail{
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* column-gap: 30px; */
 }

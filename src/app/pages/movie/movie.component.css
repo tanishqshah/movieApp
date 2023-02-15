@@ -1,5 +1,154 @@
 input 
 {
-    color: antiquewhite;
     color:black;
+}
+
+.movie 
+{
+    width: 100%;
+    height: 100vh;
+    /* background-color: blue; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.video 
+{
+    width: 100%;
+   
+    /* height: 100vh; */
+}
+
+.overlay 
+{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-image: linear-gradient(transparent, black);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.movie-details
+{
+    width: 100%;
+    padding: 30px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 15px;
+    /* background-color: white; */
+}
+
+.base-details
+{
+    height: 100px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.description 
+{
+    width: 60%;
+}
+
+.runtime 
+{
+    background-color: #2a67e4;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+.rating 
+{
+    width: 90px;
+    display: flex;
+    column-gap: 3px;
+    cursor: pointer;
+    position: relative;
+    /* background-color: gray; */
+}
+
+.gray-star 
+{
+    width: 90px;
+    display: flex;
+}
+
+.gold-star
+{
+    /* width: 30px; */
+    display: flex;
+    position: absolute;
+   
+    overflow: hidden;
+}
+
+
+.gold-star i
+{
+    color: gold;
+   
+}
+
+
+.reviews
+{
+    width: 100%;
+    padding: 30px 200px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.review-form 
+{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: flex-start;
+}
+
+.review-form input
+{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    text-indent:10px ;
+}
+
+.review-form textarea 
+{
+    width: 100%;
+    height: 100px;
+    padding:10px;
+    border-radius: 5px;
+    resize: none;
+}
+
+.user-reviews 
+{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.review 
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.selected 
+{
+    color: gold;
 }

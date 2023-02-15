@@ -1,15 +1,94 @@
-<div>
-    
-</div>
+<section class="movie">
 
-<section>
-    <form action="" #reviewForm="ngForm" (ngSubmit)="onSubmit(reviewForm)">
-        <input type="email" placeholder="enter Email" emailvalidator name="email" ngModel>
-        <input type="text" placeholder="enter Message" name="review" ngModel>
-        <input type="number" placeholder="Rating" name="rating" ngModel>
-        <button class="btn btn-dark">Submit</button>
-    </form>
-    <div class="message">
-        {{message}}
+    <video src="assets/endgame.mp4" class="video" #video></video>
+
+    <div class="overlay" (click)="playVideo()">
+
+        <div class="movie-details">
+            <div class="base-details">
+                <h1 class="movie-title">{{movie.name}}</h1>
+                <p>{{movie.genre}}</p>
+                <p class="runtime">{{movie.runtime}} Min</p>
+                <p class="runtime">
+                    IMDB {{movie.rating}}
+                </p>
+
+                <div class="rating">
+
+
+                    <div class="gray-star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="gold-star" style="width:{{averageRating}}%">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="description">
+                {{movie.description}}
+            </p>
+            <p>
+                {{movie.cast}}
+            </p>
+
+            <button class="btn btn-lg btn-dark">Play Movie Now</button>
+
+        </div>
+
     </div>
+
+
+</section>
+
+<section class="reviews">
+
+    <h1 class="section-title">Write a Review</h1>
+
+    <form class="review-form" #reviewForm="ngForm" (ngSubmit)="onSubmit(reviewForm)">
+        <input ngModel placeholder="Enter Email" name="email" type="email">
+        <textarea ngModel placeholder="Enter Message" name="review"></textarea>
+        <input ngModel placeholder="Enter Rating" name="rating" type="number" max="5" min="1">
+        <button class="btn btn-dark">Submit Review</button>
+    </form>
+
+    <h1>All Reviews</h1>
+
+    <div class="user-reviews">
+        <div class="review" *ngFor="let review of reviews">
+            <p>
+                {{review.review}}
+            </p>
+            <p>
+                <ng-container *ngFor="let item of [1,2,3,4,5]">
+                    <i class="fa-solid fa-star" [class.selected]="item<=review.rating"></i>
+                </ng-container>
+
+
+            </p>
+            <p>
+                {{review.email}}
+            </p>
+
+            <p>
+                Commented On : {{review.created_at | date}}
+            </p>
+
+            <hr width="30%">
+        </div>
+
+    </div>
+
 </section>
